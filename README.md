@@ -3,7 +3,8 @@ A repository providing a postgres DB upsert script in Python.
 
 ### How to use this repo
 We provide a docker-compose file to spin up a local postgres database server which you can use to test the ingester. On startup the `init.sql` script will run which creates a new `assets` table as well as a new example user `test_user` with password `password`, which is then used by the ingester to upsert data into the database. To start the docker container run `docker compose up` and check the logs to ensure the database and user has been created.
-Next, we can run the ingester. We provide two ingester examples in this repository, the first, `load-from-json`, interacts with the database directly by executing SQL commands as text, for example
+Next, we can run the ingester. You will need to import the required packages before executing the scripts, we suggest you do this in a Python virtual environment and use the provided `requirements.txt` file to install the required packages.
+We provide two ingester examples in this repository, the first, `load-from-json`, interacts with the database directly by executing SQL commands as text, for example
 ```
 INSERT INTO assets (immutable_id, public, type, inserted_at_revision, deleted_at_revision, edit, content)
 VALUES %s
