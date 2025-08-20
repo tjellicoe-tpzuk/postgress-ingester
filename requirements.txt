@@ -1,0 +1,6 @@
+psycopg2>=2.9.10
+asyncpg
+sqlmodel
+click
+sshtunnel
+tqdm
